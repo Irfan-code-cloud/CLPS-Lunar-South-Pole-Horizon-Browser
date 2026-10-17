@@ -1,0 +1,10 @@
+{
+  "sites": [
+    {
+      "name": "Amundsen Rim Alpha",
+      "latitude": -84.5,
+      "longitude": 85.6,
+      "description": "High-altitude plateau target near Amundsen Crater for extended solar exposure."
+    }
+  ]
+}

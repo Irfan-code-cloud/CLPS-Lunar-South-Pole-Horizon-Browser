@@ -1,0 +1,22 @@
+{
+    "sites": [
+        {
+            "name": "Shackleton Crater",
+            "latitude": -89.9,
+            "longitude": 0.0,
+            "description": "Prime target for Artemis and CLPS. High shadow variance."
+        },
+        {
+            "name": "Malapert Massif",
+            "latitude": -85.9,
+            "longitude": 2.9,
+            "description": "Elevated region offering near-continuous Earth visibility."
+        },
+        {
+            "name": "Connecting Ridge",
+            "latitude": -89.4,
+            "longitude": -137.4,
+            "description": "Strategically sunlit ridge connecting Shackleton to de Gerlache."
+        }
+    ]
+}

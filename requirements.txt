@@ -1,0 +1,9 @@
+streamlit>=1.30.0
+numpy>=1.24.0
+pandas>=2.0.0
+plotly>=5.15.0
+spiceypy>=6.0.0
+fpdf2>=2.7.9
+kaleido>=0.2.1
+google-generativeai>=0.4.0
+python-dotenv>=1.0.0

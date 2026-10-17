@@ -1,0 +1,6 @@
+name,latitude,longitude,description
+Valid Target,-85.0,0.0,Test
+Invalid Lat,-100.0,0.0,Test
+Invalid Lon,-85.0,200.0,Test
+Missing Data,,0.0,Test
+String Data,apple,banana,Test
