@@ -90,14 +90,17 @@ Below are the core mathematical frameworks powering the engine.
 
   Next, we verify signal clearance using 3D vector projection. We calculate the minimum distance $d_{min}$ between the communication signal vector and the center of the Moon to ensure the Moon isn't physically blocking the signal:
 
-  $$d_{min} = \frac{\vert{}\vec{p}_{rover} \times \vec{p}_{gateway}\vert{}}{\vert{}\vec{p}_{gateway} - \vec{p}_{rover}\vert{}} > R_{moon}$$
+$$
+d_{min} = \frac{|\vec{p}_{rover} \times \vec{p}_{gateway}|}{|\vec{p}_{gateway} - \vec{p}_{rover}|} > R_{moon}
+$$
 
-  **Variables:**
-  - $a$: Semi-major axis of the orbit.
-  - $e$: Orbital eccentricity (0.6 for our Near-Rectilinear Halo Orbit).
-  - $\nu$: True anomaly (angular position along the orbit).
-  - $\vec{p}$: 3D Cartesian vectors representing the position of the rover and Gateway.
-  - $R_{moon}$: The macro-radius of the Moon (acting as the physical signal blocker).
+**Variables:**
+
+- $a$: Semi-major axis of the orbit.
+- $e$: Orbital eccentricity (0.6 for our Near-Rectilinear Halo Orbit).
+- $\nu$: True anomaly (angular position along the orbit).
+- $\vec{p}$: 3D Cartesian vectors representing the position of the rover and Gateway.
+- $R_{moon}$: The macro-radius of the Moon (acting as the physical signal blocker).
 
 - **Expected Output:** Boolean data arrays (`True`/`False`) for `rover_to_gateway_vis` and `gateway_to_earth_vis`. If both are `True`, mission control has a confirmed telemetry link.
 
