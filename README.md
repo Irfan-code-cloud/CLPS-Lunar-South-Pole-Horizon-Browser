@@ -4,8 +4,7 @@
 > **Target Audience:** NASA Mission Planners, Flight Dynamics Engineers, and Non-Technical Stakeholders.
 > **User Guide:** [Click here to read the step-by-step UI manual](guide.md)
 
-![Software Dashboard Overview](docs/assets/screenshot_dashboard_placeholder.png)
-_(Screenshot: Provide a wide shot of the main dashboard showing the global lunar map and active targets)_
+![Software Dashboard Overview](assets/CLPS/surface_topo_1.png)
 
 ## 📖 1. Project Overview: Software Explained Simply
 
@@ -40,12 +39,13 @@ To evaluate the success and safety of a landing site, the software tracks severa
 - **Earth Line-of-Sight (LoS) Uptime:** Percentage of time direct communication with Earth is possible.
 - **Terrain Hazard Index:** A composite score of slope, crater density, and landing safety.
 
-![KPI Analytics Chart](docs/assets/screenshot_kpi_charts_placeholder.png)
-_(Screenshot: Insert an image showing the KPI gauges or charts from the UI)_
+![Deep Space Network Telemetry KPIs](assets/CLPS/orbit_mech_3.png)
 
 ### 🚀 Launch Window Calculation
 
 The software doesn't just look at _where_ to land, but _when_. Launch windows are calculated based on:
+
+![AI Launch Window Optimization](assets/CLPS/Surface_topo_4.png)
 
 1. **Earth-Moon Phasing:** Ensuring the spacecraft intercepts the Moon when the target site is entering its local morning (providing roughly 14 Earth days of sunlight for immediate operations).
 2. **Illumination Angles:** Avoiding landing during high noon (where lack of shadows makes hazard detection difficult) or deep night (where thermal death occurs).
@@ -79,6 +79,8 @@ Below are the core mathematical frameworks powering the engine.
 
 - **Expected Output:** A dynamic, hour-by-hour time-series graph tracking the rover's exact temperature (°C). The engine automatically throws a `CRITICAL_FREEZE` or `CRITICAL_OVERHEAT` flag if the hardware is projected to fail.
 
+![Thermodynamic Profile & Thermal Limits](assets/CLPS/surface_topo_6.png)
+
 ### 🛰️ 4.2. Orbital Kinematics (Lunar Gateway NRHO Relay)
 
 - **Purpose:** To validate three-body communication Line of Sight (LoS) clearance. We need to know exactly when the rover can talk to the Lunar Gateway, and when the Gateway can relay that signal back to Earth.
@@ -104,6 +106,8 @@ $$
 
 - **Expected Output:** Boolean data arrays (`True`/`False`) for `rover_to_gateway_vis` and `gateway_to_earth_vis`. If both are `True`, mission control has a confirmed telemetry link.
 
+![3D Orbital Kinematics and Eclipse Simulation](assets/CLPS/orbit_mech_1.png)
+
 ### ☀️ 4.3. Solar Elevation & Terrain Illumination
 
 - **Purpose:** To determine the precise moments of sunrise and sunset at a given lunar coordinate, dictating maximum solar power generation.
@@ -120,6 +124,8 @@ $$
   - $H$: Local hour angle (calculated from the site's longitude and elapsed mission time).
 
 - **Expected Output:** An hour-by-hour array of solar flux percentages. This directly feeds into the Thermodynamics Engine to simulate when the solar panels stop receiving light and battery drain begins.
+
+![3D Navigation Mesh and Traversal Route](assets/CLPS/surface_topo_3.png)
 
 ## 🏗️ 5. System Architecture & Tech Stack
 
@@ -140,6 +146,8 @@ The architecture is designed to be highly modular, allowing independent engines 
 
 A massive dataset of 5,000 lunar coordinates generates an overwhelming amount of telemetry. To bridge the gap between complex flight dynamics and non-technical stakeholders, we integrated an AI layer (`mission_copilot.py`).
 
+![AI Mission Copilot Interface](assets/CLPS/copilot.png)
+
 **How the AI Accelerates Mission Planning:**
 Instead of manually hunting for the best site, a NASA planner can interact with the Mission Copilot in natural language.
 
@@ -152,8 +160,6 @@ Instead of manually hunting for the best site, a NASA planner can interact with 
 ## 🔄 7. Operational Flowchart & Data Lifecycle
 
 Below is the logical flow of how a raw coordinate is transformed into a validated mission target.
-
-_(Note: GitHub and modern Markdown readers render the diagram below automatically. We will also include a high-res screenshot of the architecture below.)_
 
 ```mermaid
 graph TD
@@ -183,8 +189,6 @@ graph TD
     G1 --> H2((Telemetry Graphs))
     G2 --> H3((Natural Language Briefs))
 ```
-
-![Architecture Flowchart](docs/assets/screenshot_architecture_diagram_placeholder.png)
 
 ## 📂 8. Project Directory Structure
 
@@ -229,8 +233,7 @@ Regardless of the file type, the data parser strictly requires four fundamental 
 | `longitude`   | Float     | The site's longitude from `-180.0` to `180.0`.                                 |
 | `description` | String    | Contextual notes for the mission planner (e.g., _Automated survey candidate_). |
 
-![Data Upload Interface](docs/assets/screenshot_data_upload_placeholder.png)
-_(Screenshot: Show the drag-and-drop file upload zone in the dashboard along with a preview of a loaded dataframe)_
+![Raw Telemetry Data Table](assets/CLPS/surface_topo_7.png)
 
 ---
 
