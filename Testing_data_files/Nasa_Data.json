@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Mons Mouton (NASA VIPER Target)",
+    "latitude": -84.91,
+    "longitude": 33.17,
+    "description": "Flat-topped mountain plateau selected by NASA for the VIPER volatiles rover; offers extended solar illumination and low-slope terrain."
+  },
+  {
+    "name": "Connecting Ridge (Artemis III)",
+    "latitude": -89.45,
+    "longitude": -137.30,
+    "description": "High-altitude ridge linking Shackleton and de Gerlache craters; receives near-continuous sunlight at peak elevations."
+  },
+  {
+    "name": "Malapert A (CLPS IM-1 Odysseus)",
+    "latitude": -80.13,
+    "longitude": 1.44,
+    "description": "Official touchdown site of Intuitive Machines IM-1; situated near the 5km-tall Malapert Massif with strong direct-to-Earth line of sight."
+  },
+  {
+    "name": "Faustini Rim A (Artemis III)",
+    "latitude": -87.20,
+    "longitude": 77.50,
+    "description": "Elevated crater rim bordering a Permanently Shadowed Region (PSR) rich in surface water-ice signatures."
+  },
+  {
+    "name": "Haworth (Artemis III)",
+    "latitude": -87.50,
+    "longitude": -5.00,
+    "description": "Ancient polar crater region characterized by severe horizon obstructions and prolonged shadow blackouts."
+  }
+]
