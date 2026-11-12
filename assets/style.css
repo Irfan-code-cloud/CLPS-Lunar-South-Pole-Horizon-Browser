@@ -1,3 +1,67 @@
+/* --- GLOBAL TYPOGRAPHY & LAYOUT --- */
+@import url("https://fonts.cdnfonts.com/css/google-sans");
+
+/* Safely apply Google Sans to all text blocks, tables, metrics, and buttons while ignoring icon spans */
+html,
+body,
+p,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+ul,
+label,
+button,
+input,
+table,
+th,
+td,
+div[data-testid="stMarkdownContainer"],
+div[data-testid="stMetricValue"],
+div[data-testid="stMetricLabel"] {
+  font-family: "Google Sans", "Product Sans" !important;
+}
+
+/* Push the content down so it does not slide under the top header */
+.block-container {
+  padding-top: 4rem !important;
+}
+
+/* Keep the top header transparent while preserving all toolbar icons, loading animation, and sidebar toggle */
+header[data-testid="stHeader"] {
+  background-color: transparent !important;
+  visibility: visible !important;
+}
+
+[data-testid="stToolbar"],
+#MainMenu {
+  visibility: visible !important;
+}
+
+/* Hide only the bottom footer watermark */
+footer {
+  visibility: hidden !important;
+}
+
+/* Ensure the sidebar and its expand/collapse button remain visible on all screen sizes */
+[data-testid="stSidebar"] {
+  border-right: 1px solid #1e2233;
+}
+
+[data-testid="stExpandSidebarButton"],
+[data-testid="stSidebarCollapsedControl"],
+[data-testid="collapsedControl"] {
+  visibility: visible !important;
+  opacity: 1 !important;
+  color: #00e5ff !important;
+}
+
+/* --- COMPONENT STYLING --- */
+
 /* Force the native browser calendar icon to turn white in dark mode */
 ::-webkit-calendar-picker-indicator {
   filter: invert(1);
@@ -7,6 +71,52 @@
 /* Ensure the DataFrame table has sharp, professional square corners */
 [data-testid="stDataFrame"] > div {
   border-radius: 0px !important;
+}
+
+/* Metric Cards (Material Design 3 Vibe with Neon Glow) */
+[data-testid="stMetric"] {
+  background-color: #12141d;
+  border: 1px solid #1e2233;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+[data-testid="stMetric"]:hover {
+  border-color: #00e5ff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 229, 255, 0.15);
+}
+
+[data-testid="stMetricValue"] > div {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+/* Action Buttons (Hollow outline to solid fill) */
+.stButton > button {
+  border-radius: 8px;
+  border: 1px solid #00e5ff;
+  background-color: transparent;
+  color: #00e5ff;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.stButton > button:hover {
+  background-color: #00e5ff;
+  color: #090a0f;
+  border: 1px solid #00e5ff;
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
 }
 
 /* --- RESPONSIVE TYPOGRAPHY --- */
