@@ -17,7 +17,7 @@ from src.report_generator import generate_executive_briefing
 from src.mission_copilot import MissionCopilot
 
 # --- PAGE CONFIGURATION ---
-st.set_page_config(page_title="CLPS Lunar Horizon Browser", layout="wide", page_icon="🌙")
+st.set_page_config(page_title="CLPS Lunar Horizon Browser", layout="wide", page_icon="🌙", initial_sidebar_state="expanded")
 
 st.title("CLPS Lunar South Pole Horizon Browser", icon=":material/dark_mode:")
 st.caption("A Next-Gen 3D Telemetry and Shadow Mapping Tool for Mission Planners")
@@ -36,7 +36,7 @@ def get_default_sites():
 sites = get_default_sites()
 
 # --- SIDEBAR: MISSION CONTROLS ---
-st.sidebar.header("Mission Controls", icon=":material/rocket_launch:")
+st.sidebar.header("Mission Controls")
 
 # Uploader: Bring Your Own Crater / Custom Coordinates
 uploaded_site_file = st.sidebar.file_uploader(
@@ -177,7 +177,7 @@ with tab1:
         """)
 
     # ----------------- MICRO VIEW (Rover Perspective - HUD Layout) -----------------
-    st.subheader("System Vital Status", icon=":material/monitoring:")
+    st.subheader("System Vital Status")
     
     # ROW 1: Top-Level Alerts
     alert_col1, alert_col2, alert_col3 = st.columns(3)
@@ -212,19 +212,19 @@ with tab1:
     kpi1, kpi2, kpi3, kpi4, kpi5 = st.columns(5)
     
     with kpi1:
-        with st.container(border=True, height=135):
+        with st.container(border=False):
             st.metric(label="Solar Angle", value=f"{current_sun:.2f}°", delta=f"{current_sun - current_mountain_height:.2f}° clearance")
     with kpi2:
-        with st.container(border=True, height=135):
+        with st.container(border=False):
             st.metric(label="Earth Elevation", value=f"{current_earth:.2f}°", delta=f"{current_earth - 2.0:.2f}° clearance")
     with kpi3:
-        with st.container(border=True, height=135):
+        with st.container(border=False):
             st.metric(label="Solar Azimuth", value=f"{current_azimuth:.0f}°")
     with kpi4:
-        with st.container(border=True, height=135):
+        with st.container(border=False):
             st.metric(label="Current Battery", value=f"{current_batt:.1f}%")
     with kpi5:
-        with st.container(border=True, height=135):
+        with st.container(border=False):
             # Calculate live heating/cooling rate vs the previous hour
             temp_delta = current_temp - temperature_levels[max(0, time_slider - 1)]
             st.metric(label="Core Temp", value=f"{current_temp:.1f}°C", delta=f"{temp_delta:+.2f}°C / hr", delta_color="off")
@@ -258,17 +258,17 @@ with tab1:
     nav_kpi1, nav_kpi2, nav_kpi3 = st.columns(3)
     
     with nav_kpi1:
-        with st.container(border=True):
+        with st.container(border=False):
             dist_km = path_telemetry["total_distance_m"] / 1000.0
             st.metric("Total Traverse", f"{dist_km:.2f} km")
             
     with nav_kpi2:
-        with st.container(border=True):
+        with st.container(border=False):
             max_slp = path_telemetry["max_slope_deg"]
             st.metric("Max Slope", f"{max_slp:.1f}°")
             
     with nav_kpi3:
-        with st.container(border=True):
+        with st.container(border=False):
             # Drive time based on realistic extreme terrain rover speed (0.1 km/h)
             drive_time = dist_km / 0.1 if dist_km > 0 else 0
             st.metric("Est. Drive Time", f"{drive_time:.1f} hrs")
@@ -564,15 +564,15 @@ with tab2:
     dsn_col1, dsn_col2, dsn_col3, dsn_col4 = st.columns(4)
     
     with dsn_col1:
-        with st.container(border=True, height=135):
+        with st.container(border=False):
             st.metric("Direct-to-Earth Link", f"{pct_direct:.1f}%")
             
     with dsn_col2:
-        with st.container(border=True, height=135):
+        with st.container(border=False):
             st.metric("Gateway NRHO Relay", f"{pct_relay:.1f}%")
             
     with dsn_col3:
-        with st.container(border=True, height=135):
+        with st.container(border=False):
             # Dynamic color alert for blackouts formatted as a metric
             if pct_blackout > 0:
                 st.metric("Total Comms Blackout", f"{pct_blackout:.1f}%", delta="CRITICAL SIGNAL LOSS", delta_color="inverse")
@@ -580,7 +580,7 @@ with tab2:
                 st.metric("Total Comms localized", f"{pct_blackout:.1f}%")
                 
     with dsn_col4:
-        with st.container(border=True, height=135):
+        with st.container(border=False):
             prev_gx = g_x_arr[max(0, time_slider - 1)]
             prev_gy = g_y_arr[max(0, time_slider - 1)]
             prev_gz = g_z_arr[max(0, time_slider - 1)]
