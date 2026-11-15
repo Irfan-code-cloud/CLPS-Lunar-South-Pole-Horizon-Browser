@@ -258,5 +258,5 @@ The engine ships with several pre-configured datasets designed to validate the s
 - **High-Altitude Focus (`my_custom_site.json`):**
   Features `Amundsen Rim Alpha` (-84.5° Lat, 85.6° Lon). A prime operational candidate testing extended solar exposure on elevated polar terrain.
 
-**Team Name: Lunar Horizon Analytics**
-**Engineered By: Irfan Khattak & Mohammad Abdullah**
+* **Team Name: Lunar Horizon Analytics**
+* **Engineered By: Irfan Khattak & Mohammad Abdullah**
