@@ -4,6 +4,14 @@
 > **Target Audience:** NASA Mission Planners, Flight Dynamics Engineers, and Non-Technical Stakeholders.
 > **User Guide:** [Click here to read the step-by-step UI manual](guide.md)
 
+## Deployment and Live Demo
+
+> **Live Application Link:** [Click here to Launch the Applicarion](https://clps-lunar-south-pole-horizon-browser-azz8mvfmt6j4x9cvgetuko.streamlit.app/)
+
+This application is deployed live on **Streamlit Community Cloud**.
+
+> ⚠️ **Live Demo Notice:** To optimize cloud resources, this Streamlit application pauses after periods of inactivity. Please allow roughly 15 seconds for the engine to cold-boot upon your first visit.
+
 ![Software Dashboard Overview](assets/CLPS/surface_topo_1.png)
 
 ## 📖 1. Project Overview: Software Explained Simply
@@ -249,3 +257,6 @@ The engine ships with several pre-configured datasets designed to validate the s
   Targeting 0.0° Lat, 180.0° Lon. This validates the `gateway_kinematics.py` module by intentionally triggering a permanent Earth communication blackout, forcing the system to rely entirely on the Gateway NRHO relay for telemetry.
 - **High-Altitude Focus (`my_custom_site.json`):**
   Features `Amundsen Rim Alpha` (-84.5° Lat, 85.6° Lon). A prime operational candidate testing extended solar exposure on elevated polar terrain.
+
+**Team Name: Lunar Horizon Analytics**
+**Engineered By: Irfan Khattak & Mohammad Abdullah**
