@@ -6,7 +6,7 @@
 
 ## Deployment and Live Demo
 
-> **Live Application Link:** [Click here to Launch the Applicarion](https://clps-lunar-south-pole-horizon-browser-azz8mvfmt6j4x9cvgetuko.streamlit.app/)
+**Live Application Link:** [Click here to Launch the Applicarion](https://clps-lunar-south-pole-horizon-browser-azz8mvfmt6j4x9cvgetuko.streamlit.app/)
 
 This application is deployed live on **Streamlit Community Cloud**.
 
